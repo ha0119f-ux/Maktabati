@@ -56,11 +56,11 @@ jobs:
           cd "$PROJECT_DIR"
           ./gradlew assembleDebug --no-daemon
 
-      - name: Upload APK
+                - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: Maktabati-Android-APK
           path: extracted/**/build/outputs/apk/debug/*.apk
+          compression-level: 0
           if-no-files-found: error
           retention-days: 7
-          
